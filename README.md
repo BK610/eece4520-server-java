@@ -1,3 +1,3 @@
 ## Bot or Not
 
-~more info coming~
+more info coming
