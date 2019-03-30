@@ -2,7 +2,7 @@ package edu.neu.eece4520.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name="user")
@@ -43,6 +43,8 @@ public class User {
 //    @NotNull
 //    @Column(name="updated")
 //    private Date updated;
+    @OneToMany(mappedBy = "user")
+    private List<Tweet> tweets;
 
     public Integer getId() {
         return id;
