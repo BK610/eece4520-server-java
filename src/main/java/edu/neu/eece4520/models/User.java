@@ -1,37 +1,48 @@
 package edu.neu.eece4520.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
 @Entity
+@Table(name="user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Integer id;
     @NotNull
+    @Column(name="name")
     private String name;
     @NotNull
+    @Column(name="screen_name")
     private String screenName;
+    @Column(name="statuses_count")
     private Integer statusesCount;
+    @Column(name="followers_count")
     private Integer followersCount;
+    @Column(name="friends_count")
     private Integer friendsCount;
+    @Column(name="favourites_count")
     private Integer favouritesCount;
+    @Column(name="url")
     private String url;
+    @Column(name="location")
     private String location;
+    @Column(name="geo_enabled")
     private boolean geoEnabled;
+    @Column(name="profile_image_url")
     private String profileImageUrl;
+    @Column(name="profile_background_image_url")
     private String profileBackgroundImageUrl;
+    @Column(name="description")
     private String description;
-    @NotNull
-    private String createdAt;
-    @NotNull
-    private Date timestamp;
-    @NotNull
-    private Date updated;
+//    @NotNull
+//    @Column(name="timestamp")
+//    private Date timestamp;
+//    @NotNull
+//    @Column(name="updated")
+//    private Date updated;
 
     public Integer getId() {
         return id;
@@ -137,27 +148,19 @@ public class User {
         this.description = description;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
+//    public Date getTimestamp() {
+//        return timestamp;
+//    }
+//
+//    public void setTimestamp(Date timestamp) {
+//        this.timestamp = timestamp;
+//    }
+//
+//    public Date getUpdated() {
+//        return updated;
+//    }
+//
+//    public void setUpdated(Date updated) {
+//        this.updated = updated;
+//    }
 }

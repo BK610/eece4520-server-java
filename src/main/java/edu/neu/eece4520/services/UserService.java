@@ -3,9 +3,7 @@ package edu.neu.eece4520.services;
 import edu.neu.eece4520.models.User;
 import edu.neu.eece4520.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +16,32 @@ public class UserService {
     @GetMapping("/api/user")
     public List<User> findAllUsers() {
         return userRepository.findAllUsers();
+    }
+
+    @GetMapping("/api/user/{userId}")
+    public User findUserById(
+            @PathVariable("userId") Integer id) {
+        return userRepository.findUserById(id);
+    }
+
+    @PostMapping("/api/user")
+    public User createUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
+    @PutMapping("/api/user/{userId}")
+    public User updateUser(
+            @PathVariable("userId") Integer id,
+            @RequestBody User userUpdates) {
+        User user = userRepository.findUserById(id);
+        //TODO: Set all fields
+        //user.setField(userUpdates.getField());
+        return userRepository.save(user);
+    }
+
+    @DeleteMapping("/api/user/{userId}")
+    public void deleteUser(
+            @PathVariable("userId") Integer id) {
+        userRepository.deleteById(id);
     }
 }
