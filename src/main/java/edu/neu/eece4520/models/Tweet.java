@@ -20,7 +20,6 @@ public class Tweet {
     @NotNull
     @ManyToOne
     @JsonIgnore
-    @Column(name = "user_id")
     private User user;
     @Column(name = "in_reply_to_status_id")
     private Integer inReplyToStatusId;
