@@ -11,7 +11,7 @@ public class Tweet {
     @Id
     @NotNull
     @Column(name = "id")
-    private Integer id;
+    private Long id;
     @NotNull
     @Column(name = "text")
     private String text;
@@ -40,11 +40,11 @@ public class Tweet {
     @Column(name = "num_mentions")
     private Integer numMentions;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
