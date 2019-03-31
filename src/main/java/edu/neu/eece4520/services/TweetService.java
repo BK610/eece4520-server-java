@@ -20,7 +20,7 @@ public class TweetService {
 
     @GetMapping("/api/tweet/{tweetId}")
     public Tweet findTweetById(
-            @PathVariable("tweetId") Integer id) {
+            @PathVariable("tweetId") Long id) {
         return tweetRepository.findTweetById(id);
     }
 
@@ -32,7 +32,7 @@ public class TweetService {
 
     @PutMapping("api/tweet/{tweetId}")
     public Tweet updateTweet(
-            @PathVariable("tweetId") Integer id,
+            @PathVariable("tweetId") Long id,
             @RequestBody Tweet tweetUpdates) {
         Tweet tweet = tweetRepository.findTweetById(id);
         //TODO: update all fields

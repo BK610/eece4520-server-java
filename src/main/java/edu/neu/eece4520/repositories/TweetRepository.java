@@ -11,7 +11,7 @@ public interface TweetRepository extends CrudRepository<Tweet, Integer> {
     @Query(value="SELECT tweet FROM Tweet tweet")
     public List<Tweet> findAllTweets();
     @Query(value="SELECT tweet FROM Tweet tweet WHERE tweet.id=:id")
-    public Tweet findTweetById(@Param("id") Integer id);
+    public Tweet findTweetById(@Param("id") Long id);
     @Query(value="SELECT tweet FROM Tweet tweet WHERE tweet.user.id=:userId")
     public List<Tweet> findAllTweetsByUser(@Param("userId") Integer userId);
 }
