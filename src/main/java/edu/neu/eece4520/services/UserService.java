@@ -24,6 +24,13 @@ public class UserService {
         return userRepository.findUserById(id);
     }
 
+    @GetMapping("/api/user/exists/{userId}")
+    public Boolean checkUserExists(
+            @PathVariable("userId") Integer id) {
+        User user = userRepository.findUserById(id);
+        return !(user == null);
+    }
+
     @PostMapping("/api/user")
     public User createUser(@RequestBody User user) {
         return userRepository.save(user);
