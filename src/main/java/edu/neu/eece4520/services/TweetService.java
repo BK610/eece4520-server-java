@@ -46,7 +46,7 @@ public class TweetService {
         tweetRepository.deleteById(id);
     }
 
-    @GetMapping("/api/user/{userId}/tweet")
+    @GetMapping("/api/tweet/user/{userId}")
     public List<Tweet> findTweetsByUser(
             @PathVariable("userId") Integer id) {
         return tweetRepository.findAllTweetsByUser(id);
