@@ -37,12 +37,6 @@ public class User {
     private String profileBackgroundImageUrl;
     @Column(name="description")
     private String description;
-//    @NotNull
-//    @Column(name="timestamp")
-//    private Date timestamp;
-//    @NotNull
-//    @Column(name="updated")
-//    private Date updated;
     @OneToMany(mappedBy = "user")
     private List<Tweet> tweets;
 
@@ -150,19 +144,11 @@ public class User {
         this.description = description;
     }
 
-//    public Date getTimestamp() {
-//        return timestamp;
-//    }
-//
-//    public void setTimestamp(Date timestamp) {
-//        this.timestamp = timestamp;
-//    }
-//
-//    public Date getUpdated() {
-//        return updated;
-//    }
-//
-//    public void setUpdated(Date updated) {
-//        this.updated = updated;
-//    }
+    public List<Tweet> getTweets() {
+        return tweets;
+    }
+
+    public void setTweets(List<Tweet> tweets) {
+        this.tweets = tweets;
+    }
 }
