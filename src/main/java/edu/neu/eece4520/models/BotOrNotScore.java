@@ -35,7 +35,7 @@ public class BotOrNotScore {
     private Integer numUrls = 0;
     private Integer numSources = 0;
     private Integer numTweets = 0;
-    
+
     public BotOrNotScore calculate(User user, List<Tweet> tweets) {
         // Set number of URLS, Sources, and Tweets
         this.countUrlsSourcesTweets(tweets);
@@ -92,8 +92,14 @@ public class BotOrNotScore {
     }
 
     private Integer countDigitsInString(String str) {
+        int count = 0;
+        for(int i = 0; i < str.length(); i++) {
+            if(Character.isDigit(str.charAt(i))) {
+                count++;
+            }
+        }
 
-        return 0;
+        return count;
     }
 
     public Double getStatusesCountCoef() {
