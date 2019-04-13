@@ -32,9 +32,7 @@ public class BotOrNotScoreService {
         User user = userRepository.findUserById(id);
         List<Tweet> tweets = tweetRepository.findAllTweetsByUser(id);
         BotOrNotScore botOrNotScore = new BotOrNotScore();
-        botOrNotScore.setUser(user);
-        botOrNotScore.setTweets(tweets);
 
-        return botOrNotScore.calculate();
+        return botOrNotScore.calculate(user, tweets);
     }
 }
