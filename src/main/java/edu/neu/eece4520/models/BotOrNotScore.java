@@ -85,7 +85,7 @@ public class BotOrNotScore {
                 * this.getBioIsEmptyCoef());
         this.setScreenNameNumbersScore(this.countDigitsInString(user.getScreenName())
                 * this.getCountScreenNameNumbersCoef());
-        this.setAverageNumUrlsScore((this.getNumUrls() / this.getNumTweets())
+        this.setAverageNumUrlsScore((this.getNumUrls().doubleValue() / this.getNumTweets().doubleValue())
                 * this.getAverageNumUrlsCoef());
         this.setAverageNumBadSource((this.getNumSources() / this.getNumTweets())
                 * this.getAverageNumBadSourceCoef());
