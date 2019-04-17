@@ -89,10 +89,12 @@ public class BotOrNotScore {
                 * this.getBioIsEmptyCoef());
         this.setScreenNameNumbersScore(this.countDigitsInString(user.getScreenName())
                 * this.getCountScreenNameNumbersCoef());
-        this.setAverageNumUrlsScore((this.getNumUrls().doubleValue() / this.getNumTweets().doubleValue())
-                * this.getAverageNumUrlsCoef());
-        this.setAverageNumBadSource((this.getNumSources() / this.getNumTweets())
-                * this.getAverageNumBadSourceCoef());
+        if(!(this.getNumTweets() == 0)) {
+            this.setAverageNumUrlsScore((this.getNumUrls().doubleValue() / this.getNumTweets().doubleValue())
+                    * this.getAverageNumUrlsCoef());
+            this.setAverageNumBadSource((this.getNumSources() / this.getNumTweets())
+                    * this.getAverageNumBadSourceCoef());
+        }
     }
 
     private Integer countDigitsInString(String str) {
