@@ -22,6 +22,8 @@ public class BotOrNotScore {
     @JsonIgnore
     private Double averageNumBadSourceCoef = -0.7432;
 
+    private String userHandle = "";
+
     private Double overallScore = 0.0;
     private Double statusesCountScore = 0.0;
     private Double friendsCountScore = 0.0;
@@ -37,6 +39,8 @@ public class BotOrNotScore {
     private Integer numTweets = 0;
 
     public BotOrNotScore calculate(User user, List<Tweet> tweets) {
+        this.setUserHandle(user.getScreenName());
+
         // Set number of URLS, Sources, and Tweets
         this.countUrlsSourcesTweets(tweets);
 
@@ -126,6 +130,8 @@ public class BotOrNotScore {
     public Double getAverageNumBadSourceCoef() {
         return averageNumBadSourceCoef;
     }
+    public String getUserHandle() { return userHandle; }
+    public String setUserHandle(String handle) { this.userHandle = handle; }
     public Double getOverallScore() {
         return overallScore;
     }
