@@ -131,7 +131,7 @@ public class BotOrNotScore {
         return averageNumBadSourceCoef;
     }
     public String getUserHandle() { return userHandle; }
-    public String setUserHandle(String handle) { this.userHandle = handle; }
+    public void setUserHandle(String handle) { this.userHandle = handle; }
     public Double getOverallScore() {
         return overallScore;
     }
